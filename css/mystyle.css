@@ -3,20 +3,30 @@ body {font-family: sans-serif;}
 li{list-style: none;}
 a{text-decoration: none;}
 img{bottom: 0;}
+header{padding-top: 60px;}
 
 #main_header
 {
     width: 960px;
     margin: 0 auto;
     position: relative;
-    height: 160px;
+    height: 500px;
+}
+#main_header>#carousel
+{
+    position: absolute;
+    left: 220px;
+    top: 200px;
+    height: auto;
+    width: 500px;
 }
 
 #main_header>#title
 {
     position: absolute;
-    left: 300px;
-    top: 30px;
+    left: 250px;
+    top: 80px;
+    
 }
 
 #main_header>#main_gnb
@@ -114,7 +124,6 @@ img{bottom: 0;}
     overflow: hidden;
     padding: 10px;
     border: 1px solid black;
-    border-top: none;
 }
 
 .thumbnail
@@ -132,7 +141,7 @@ img{bottom: 0;}
 {
     display: block;
     width: 120px;
-    white-space: nowrap;
+    white-space: noaside_logo;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -146,4 +155,84 @@ img{bottom: 0;}
     padding: 10px;
     border: 1px solid black;
     text-align: center;
+}
+/* navbar */
+#main_nav
+{
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+/* logo part */
+
+#main_header>#aside_logo
+{
+    float: left;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: -10px;
+}
+.box
+{
+    width: 50px;
+    height: 50px;
+    left: 0;
+    
+    position: absolute;
+}
+.box:nth-child(1)
+{
+    background-color: blueviolet;
+    transform: translate3d(0px, 0px, 25px);
+}
+.box:nth-child(2)
+{
+    background-color: crimson;
+    transform: rotateY(90deg) translate3d(0px, 0px, 25px);
+}
+.box:nth-child(3)
+{
+    background-color: skyblue;
+    transform: rotateY(180deg) translate3d(0px, 0px, 25px);
+}
+.box:nth-child(4)
+{
+    background-color: yellow;
+    transform: rotateX(270deg) translate3d(0px, 0px, 25px);
+}
+.box:nth-child(5)
+{
+    background-color: lightcoral;
+    transform: rotateX(90deg) translate3d(0px, 0px, 25px);
+}
+.box:nth-child(6)
+{
+    background-color: brown;
+    transform: rotateY(270deg) translate3d(0px, 0px, 25px);
+}
+#aside_logo
+{
+    transform-style: preserve-3d;
+}
+@keyframes _3d_ani
+{
+    0%{ transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg)}
+    100%{ transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg)}
+}
+#main_header>#aside_logo
+{
+    animation-name: _3d_ani;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    left: 175px;
+    top: 50px;
+}
+.box
+{
+    opacity: 0.3;
 }
